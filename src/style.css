@@ -54,7 +54,50 @@ body {
   border: 1px solid yellow;
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
+  align-items: center;
+  width: 45vh;
   border-radius: 10px;
   background-color: #202127;
+  padding-bottom: 40px;
+}
+.tasks {
+  list-style-type: none;
+  background-color: #000;
+  display: flex;
+  width: 40vh;
+  border-radius: 30px;
+  margin-top: 10px;
+  padding: 10px;
+}
+.show-tasks {
+  display: flex;
+  justify-content: space-between;
+}
+.Tasks-status {
+  display: none;
+}
+.delete {
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  background-color: #e91c1c;
+  height: 30px;
+  width: 30px;
+  font-size: 180%;
+  border-radius: 200%;
+  border: 1px solid black;
+}
+.singular-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 140px;
+  width: 100%;
+}
+.wrap1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
