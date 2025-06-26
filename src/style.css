@@ -14,6 +14,47 @@ body {
   min-height: 100vh;
   background-image: url();
 }
+.input-area {
+  display: flex;
+  flex-direction: row;
+}
 .container {
   border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+  height: 50vh;
+  border-radius: 25px;
+}
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d80dd;
+  height: 40px;
+  width: 40px;
+  font-size: 180%;
+  padding: 5px;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  cursor: pointer;
+}
+#task-input {
+  border-radius: 30px;
+  padding-left: 10px;
+  background-color: inherit;
+  margin-right: -40px;
+  border: 1px solid white;
+}
+.add:hover {
+  background-color: #0d5599;
+}
+.to-doapp {
+  border: 1px solid yellow;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+  background-color: #202127;
 }
