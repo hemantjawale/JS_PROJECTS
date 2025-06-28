@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const getWeatherBtn = document.querySelector(".get-weather-btn");
     const weatherInfo = document.getElementById("weather-info");
     const cityNameDisplay = document.getElementById("city-name");
-    const temperatureDisplay = document.getElementById("temperature");
-    const descriptionDisplay = document.getElementById("descrp");
+    const temperatureDisplay = document.querySelector("#temprature");
+    const descriptionDisplay = document.querySelector("#descrp");
     const errorMessage = document.getElementById("error-msg");
     const API_KEY="7c8a1a56652992cada7bf6638d5795d2";
     
@@ -25,19 +25,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
    const response =  await fetch(url);
    console.log(response);
-   if(!response.ok) showError()
+   if(response.ok==false) {
+    showError()
+   }
    const data = await response.json()
 
 return data;
     }
     function displayWeatherData(weatherData){
      console.log(weatherData);
-     const{name,main,weather}=data;
+     const {name,main,weather}=weatherData;
      console.log(name);
-     console.log(main);
-     console.log(weather);
-    //  cityNameDisplay.textContent=name;
-    }
+     console.log(main.temp);
+     console.log(weather[0].main);
+        weatherInfo.classList.toggle('hidden')
+        errorMessage.classList.add('hidden')
+
+    cityNameDisplay.textContent=name;
+   temperatureDisplay.textContent=`Temprature : ${main.temp} C`;
+   descriptionDisplay.textContent=`Weather : ${weather[0].main}`;
+
+}
     function showError(){
         weatherInfo.classList.remove('hidden')
         errorMessage.classList.add('hidden')
