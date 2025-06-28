@@ -8,9 +8,11 @@
 <link rel="stylesheet" href="style.css">
 <body>
     <div class="contatiner">
-        <h1>Weather App</h1>
+        <div class="inner-card">
+
+            <h1>Weather App</h1>
         <div class="input-container">
-            <input type="text" placeholder="Enter the city..." class="input">
+            <input type="text" placeholder="Enter the city..." class="city-input">
             <button class="get-weather-btn"> Get Weather</button>
         </div>
         <div id="weather-info" class="hidden">
@@ -19,6 +21,7 @@
             <p id = "descrp"></p>
         </div>
         <p class="hidden" id="error-msg">City not found   Please try again..</p>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>
