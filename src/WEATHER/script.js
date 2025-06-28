@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     getWeatherBtn.addEventListener("click", async()=>{
         const city = cityInput.value.trim();
-        if(!city) return;
+        if(!city) {
+            showError();
+            return;
+        }
         //it may throw errr
         //server may be only continent it will take time
         try {
@@ -42,12 +45,12 @@ return data;
         errorMessage.classList.add('hidden')
 
     cityNameDisplay.textContent=name;
-   temperatureDisplay.textContent=`Temprature : ${main.temp} C`;
+   temperatureDisplay.innerHTML=`Temprature : ${main.temp}&#176C`;
    descriptionDisplay.textContent=`Weather : ${weather[0].main}`;
 
 }
     function showError(){
-        weatherInfo.classList.remove('hidden')
-        errorMessage.classList.add('hidden')
+        weatherInfo.classList.add('hidden')
+        errorMessage.classList.remove('hidden')
     }
 });

@@ -41,7 +41,6 @@ body{
     align-items: center;
 }
 #error-msg{
-    display: none;
     color: red;
 }
 .contatiner{
@@ -51,4 +50,17 @@ body{
  justify-content: center;
  align-items: center;
  height: 100vh;
+}
+.hidden{
+    display: none;
+}
+#weather-info{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #000;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #fff;
 }
