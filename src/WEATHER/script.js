@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //server may be only continent it will take time
         try {
          const weatherData =  await fetchWeatherData(city)
-         displayWeatherData()
+         displayWeatherData(weatherData)
         } catch (error) {
             showError()
         }
@@ -23,17 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
     })
    async function fetchWeatherData(city){
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
-   const response =  fetch(url);
-    console.log(typeof(response));
-    console.log(response);
-    
-    
+   const response =  await fetch(url);
+   console.log(response);
+   if(!response.ok) showError()
+   const data = await response.json()
+
+return data;
     }
     function displayWeatherData(weatherData){
-
+     console.log(weatherData);
+     const{name,main,weather}=data;
+     console.log(name);
+     console.log(main);
+     console.log(weather);
+    //  cityNameDisplay.textContent=name;
     }
     function showError(){
-        weatherInfo.classList('hidden')
-        errorMessage.classList.remove('hidden')
+        weatherInfo.classList.remove('hidden')
+        errorMessage.classList.add('hidden')
     }
 });
