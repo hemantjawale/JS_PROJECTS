@@ -1,29 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const add = document.querySelector(".add");
-  const input = document.querySelector("#task-input");
-  const checkbox = document.querySelector("#task-done");
-  const delete_task = document.querySelector(".delete");
-  const newtask = document.querySelector(".wrap1");
-  let task = JSON.parse(localStorage.getItem("task")) || [];
-  task.forEach((task) => renderTask(task));
-  add.addEventListener("click", (e) => {
+document.addEventListener("DOMContentLoaded",()=>{
+    let input = document.querySelector(".InputTask");
+let AddBtn=document.querySelector(".AddBtn");
+let displayTask=document.querySelector(".displayTask")
+let allTasks=JSON.parse(localStorage.getItem("tasks"))||[];
+allTasks.forEach(task => renderTaskLoocal(task));
+
+AddBtn.addEventListener("click",(e)=>{
     e.preventDefault();
-    const taskTest = input.value.trim();
-    if (taskTest === "") return;
-    const newtask = {
-      id: Date.now(),
-      text: taskTest,
-      completed: false,
+
+    let taskTest=input.value.trim();
+
+    if(taskTest ==="") return;
+    let newTask = {
+        id:Date.now(),
+        taksname:taskTest,
+        isCompleted:false
     };
-    task.push(newtask);
-    input.value = "";
-    savetask();
-    console.log(task);
-  });
-  function savetask() {
-    localStorage.setItem("task", JSON.stringify(task));
-  }
-  function renderTask(task) {
-    console.log(task);
-  }
-});
+    allTasks.push(newTask);
+    saveTaskLocal();
+    taskTest="";
+})
+function saveTaskLocal(){
+    localStorage.setItem("tasks",JSON.stringify(allTasks))
+}
+function renderTaskLoocal(task){
+    let li=document.createElement("li");
+    li.setAttribute("data-id",task.id);
+    li.innerHTML=`
+    <span>${task.taksname}</span>
+    <button id = "delete">-</button>`
+    displayTask.appendChild(li)
+    if(task.isCompleted) li.classList.add("completed")
+    li.addEventListener("click",(e)=>{
+        if(e.target.tagName=="BUTTON") return;
+        task.isCompleted=(!task.isCompleted);
+        li.classList.toggle("completed");        
+        saveTaskLocal()
+
+    })
+   li.querySelector("#delete").addEventListener("click",(e)=>{
+        e.stopPropagation();
+        allTasks=allTasks.filter((t)=> t.id!=task.id)
+        li.remove();
+        saveTaskLocal()
+    })
+}
+})

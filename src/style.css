@@ -1,114 +1,123 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@1,400..900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+body{
+    background-color: #000;
+    font-family: ubuntu;
 }
-body {
-  font-family: Jost;
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url();
+.main{
+    color: #fff;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-.input-area {
-  display: flex;
-  flex-direction: row;
+.heading{
+    margin: 5px 0px;
+    font-size: 30px;
+    font-weight: bold;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vh;
-  height: 50vh;
-  border-radius: 25px;
+.InputTask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10PX;
+    padding-left: 5px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1.5px solid #fff;
+    color: #fff;
+    height: 25px;
 }
-.add {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #1d80dd;
-  height: 40px;
-  width: 40px;
-  font-size: 180%;
-  padding: 5px;
-  border: 1px solid #fff;
-  border-radius: 100px;
-  cursor: pointer;
+.listCard{
+    border-radius: 10px;
+    
+    padding: 25px 50px;
+    background-color: #434a4b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-#task-input {
-  border-radius: 30px;
-  padding-left: 10px;
-  background-color: inherit;
-  margin-right: -40px;
-  border: 1px solid white;
-}
-.add:hover {
-  background-color: #0d5599;
-}
-.to-doapp {
-  border: 1px solid rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 45vh;
-  border-radius: 10px;
-  background-color: #202127;
-  padding-bottom: 40px;
-}
-.tasks {
-  list-style-type: none;
-  background-color: #000;
-  display: flex;
-  width: 40vh;
-  border-radius: 30px;
-  margin-top: 10px;
-  padding: 10px;
-}
-.show-tasks {
-  display: flex;
-  justify-content: space-between;
-}
-.Tasks-status {
-  display: none;
-}
-.delete {
-  color: #fff;
-  display: flex;
-  font-weight: bold;
-  justify-content: center;
-  align-items: center;
-  background-color: #e91c1c;
-  height: 30px;
-  width: 30px;
-  font-size: 180%;
-  border-radius: 200%;
-  border: 1px solid black;
-}
-.delete:hover {
-  background-color: #b00000;
-  cursor: pointer;
-}
-.singular-task {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 140px;
-  width: 100%;
-}
-.wrap1 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-#task-done {
-  accent-color: #1d80dd;
-  width: 20px;
-  height: 20px;
+.AddBtn{
+    
+    background-color: #2b75d7;
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    border: 1.5px solid #540d0d;
+    margin-left: 10px;
+    padding: 0;
 
-  cursor: pointer;
+}
+.AddBtn:hover{
+    background-color: #414d9d;
+    cursor: pointer;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+li{
+    list-style-type: none;
+}
+#delete{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    border:1px solid #fff
+}
+#delete:hover{
+    background-color: #d40b0b;
+    cursor: pointer;
+}
+.newtask{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.displayTask{
+    border-radius: 15px;
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: column;
+    
+}
+/* 
+.displayTask li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+
+
+} */
+ .displayTask li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 8px 0;
+    background-color: #000;
+    border-radius: 8px;
+    border: 1px solid #444;
+    color: #fff;
+
+}
+.completed {
+    text-decoration: line-through;
+}
+
+.displayTask li:hover {
+    cursor: pointer;
+    background-color: #2a2a2a;
+}
+
+#delete{
+    margin-left: 100px;
 }

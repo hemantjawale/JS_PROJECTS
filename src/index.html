@@ -1,33 +1,27 @@
-<!DOCTYPE html>
+<!DOCTYPE html>     
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-Do App</title>
-  </head>
-  <link rel="stylesheet" href="style.css" />
-  <body>
-    <div class="container">
-      <div class="to-doapp">
-        <h1>To - Do List</h1>
-        <form class="input-area">
-          <input type="text" id="task-input" placeholder="Add a new task" />
-          <button class="add">+</button>
-        </form>
-        <div class="show-tasks">
-          <ul class="tasks">
-            <li>
-              <div class="singular-task">
-                <div class="wrap1">
-                  <input type="checkbox" name="" id="task-done" /> OS
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+   <link rel="shortcut icon" href="https://www.gstatic.com//tasks/f5cfbf604fef12b05341c945d745fff2/favicon.ico" type="image/x-icon">
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <div class="main">
+        <div class="listCard">
+             <p class="heading">TO-DO LIST</p>
+            <div class="content">
+                <div class="newtask">
+                    <input type="text" class = "InputTask"placeholder="Add Your Task...">
+                    <button class="AddBtn">+</button>
                 </div>
-                <button class="delete">-</button>
-              </div>
-            </li>
-          </ul>
+                <div class="displayTask">
+                </div>
+                   
+            </div>
         </div>
-      </div>
     </div>
-  </body>
-  <script src="script.js"></script>
+   <script src = "script.js"></script>
+</body>
 </html>
