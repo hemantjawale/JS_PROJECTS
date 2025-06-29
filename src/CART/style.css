@@ -46,4 +46,8 @@ button:hover {
 }
 .calculate {
   display: flex;
+  justify-content: center;
+}
+#totalprice {
+  display: none;
 }
