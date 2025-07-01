@@ -8,18 +8,22 @@
     border: none;
     scroll-behavior: smooth;
 }
+
 :root{
     --bg-color:#081b29;
     --second-bg-color:#112e42;
     --text-color:#ededed;
     --main-color:#00abf0
 }
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;
 }
+
 body{
     background-color: var(--bg-color);
+  
     color: var(--text-color);
 }
 .header{
@@ -34,11 +38,13 @@ body{
     align-items: center;
     z-index: 100;
 }
+
 .logo{
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
 }
+
 .navbar a{
     font-size: 1.7rem;
     color: var(--text-color);
@@ -70,6 +76,7 @@ section{
     display: flex;
     align-items: center;
     padding: 0 9%;
+    background: url('/assets/ChatGPT\ Image\ Jul\ 1\,\ 2025\,\ 12_07_21\ PM.png') no-repeat;
 }
 
 .home-content{
@@ -101,4 +108,95 @@ section{
 
 .btn-box{
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;
+}
+
+.btn-box .btn{
+ position: relative;
+ display: inline-flex;
+ justify-content: center;
+ align-items: center;
+ width: 15rem;
+ height: 100%;
+ background-color: var(--main-color);
+ border: .2rem solid var(--main-color);
+ border-radius: .8rem;
+ font-size: 1.8rem;
+ font-weight: 600;
+ letter-spacing: .1rem;
+ color: var(--bg-color);
+ z-index: 1;
+ overflow: hidden;
+ transition: .5s;
+}
+
+.btn-box .btn:hover{
+    color: var(--main-color);
+}
+.btn-box .btn:nth-child(2){
+    background-color: transparent;
+    color: var(--main-color);
+}
+.btn-box .btn:nth-child(2)::before{
+    background: var(--main-color);
+}
+
+.btn-box .btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--bg-color);
+    transition: .5s;
+    z-index: -1;
+}
+
+.btn-box .btn:hover::before{
+    width: 100%;
+}
+
+.home-sci{
+    position: absolute;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 22px;
+    overflow: hidden;
+    transition: .5s;
+}
+.home-sci img{
+    height: 20px;
+  
+}
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before{
+    width: 100%;
 }
