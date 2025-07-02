@@ -1,3 +1,10 @@
+let menuIcon = document.querySelector("#menu-icon");
+let navBar = document.querySelector(".navbar");
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle("bx-x");
+  navBar.classList.toggle("active");
+};
+
 let sections = document.querySelectorAll("section");
 let navLiks = document.querySelectorAll("header nav a");
 window.onscroll = () => {
