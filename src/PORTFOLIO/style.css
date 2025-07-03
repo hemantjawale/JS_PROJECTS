@@ -270,6 +270,7 @@ section {
 
 .heading {
   position: relative;
+  display: inline-block;
   font-size: 5rem;
   margin-bottom: 3rem;
   text-align: center;
@@ -318,6 +319,7 @@ span {
 }
 
 .about-content p {
+  position: relative;
   font-size: 1.6rem;
   margin: 2rem 0 3rem;
 }
@@ -350,11 +352,14 @@ span {
 }
 
 .education-column .title {
+  position: relative;
+  display: inline-block;
   font-size: 2.5rem;
   margin: 0 0 1.5rem 2rem;
 }
 
 .education-column .education-box {
+  position: relative;
   border-left: 0.2rem solid var(--main-color);
 }
 
@@ -424,6 +429,12 @@ span {
   background-color: var(--second-bg-color);
 }
 
+.skills h2{
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%,);
+}
+
 .skills .skills-row {
   display: flex;
   flex-wrap: wrap;
@@ -435,10 +446,15 @@ span {
 }
 
 .skills-column .title {
+  position: relative;
+  display: inline-block;
   font-size: 2.5rem;
   margin: 0 0 1.5rem;
 }
 
+.skills-column .skills-box{
+  position: relative;
+}
 .skills-box .skills-contnet {
   position: relative;
   border: 0.2rem solid var(--main-color);
@@ -873,9 +889,16 @@ span {
   animation: none;
 }
 
-.about.show-animate .animate.scroll {
+.about.show-animate .animate.scroll,
+.education.show-animate .animate.scroll,
+.education.show-animate .education-box .animate.scroll,
+.skills.show-animate .animate.scroll{
   transition-delay: calc(0.3s * var(--i));
   width: 0;
 }
 
-/* 1:46:00 */
+.education .education-box .animate.scroll{
+width: 105%;
+}
+
+/* 1:54:00 */
