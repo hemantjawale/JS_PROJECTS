@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 * {
-  font-family: Poppins;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   border: none;
+  outline: none;
   scroll-behavior: smooth;
+  font-family: Poppins;
 }
 
 :root {
@@ -85,7 +86,7 @@ section {
   display: flex;
   align-items: center;
   padding: 0 9%;
-  /* background: url('/assets/ChatGPT\ Image\ Jul\ 1\,\ 2025\,\ 12_12_06\ PM.png') no-repeat; */
+  background: url('/assets/banner.png') no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -121,8 +122,12 @@ section {
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   background-position: -33rem 0;
+}
+
+.home.show-animate .home-content .text-animate h3{
   animation: homeBgText 6s linear infinite;
   animation-delay: 2s;
+
 }
 
 .home-content .text-animate h3::before {
@@ -135,8 +140,12 @@ section {
   border-right: 2px solid var(--main-color);
   /* border-left: 2px solid var(--main-color); */
   z-index: -1;
+}
+
+.home.show-animate .home-content .text-animate h3::before{
   animation: homeCursorText 6s linear infinite;
   animation-delay: 2s;
+
 }
 
 .home-content p {
@@ -178,7 +187,7 @@ section {
 
 .btn-box .btn:nth-child(2) {
   background-color: transparent;
-  color: var(--main-color);
+  color: var(--text-color);
 }
 .btn-box .btn:nth-child(2)::before {
   background: var(--main-color);
@@ -285,7 +294,8 @@ section {
 }
 
 .about-img img {
-  width: 90%;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 0.2rem solid var(--main-color);
 }
@@ -545,6 +555,12 @@ span {
   padding-bottom: 7rem;
 }
 
+.contact h2{
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .contact form {
   max-width: 70rem;
   margin: 0 auto;
@@ -628,6 +644,11 @@ span {
   flex-wrap: wrap;
   padding: 2rem 9%;
   background: var(--second-bg-color);
+}
+
+.footer-text,
+.footer-iconTop{
+  position: relative;
 }
 
 .footer-text p {
@@ -806,6 +827,12 @@ span {
   }
 }
 
+@media (max-width: 850px) {
+  .animate.home-img{
+    width: 55%;
+  }
+}
+
 @media (max-width: 371px) {
   .home {
     justify-content: center;
@@ -862,7 +889,7 @@ span {
   right: 0;
   width: 100%;
   height: 100%;
-  background: yellowgreen;
+  background: var(--bg-color);
   z-index: 98;
 }
 
@@ -892,7 +919,9 @@ span {
 .about.show-animate .animate.scroll,
 .education.show-animate .animate.scroll,
 .education.show-animate .education-box .animate.scroll,
-.skills.show-animate .animate.scroll{
+.skills.show-animate .animate.scroll,
+.contact.show-animate .animate.scroll,
+.footer.show-animate .animate.scroll{
   transition-delay: calc(0.3s * var(--i));
   width: 0;
 }
@@ -901,4 +930,9 @@ span {
 width: 105%;
 }
 
-/* 1:54:00 */
+
+section:nth-child(odd) .animate.scroll,
+.footer .animate.scroll{
+  background: var(--second-bg-color);
+}
+
