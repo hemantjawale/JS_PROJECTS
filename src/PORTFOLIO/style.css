@@ -440,8 +440,9 @@ span {
 }
 
 .skills h2{
-  display: inline-block;
-  left: 50%;
+  display: flex;
+  justify-content: center;
+  /* left: 50%; */
   transform: translateX(-50%,);
 }
 
