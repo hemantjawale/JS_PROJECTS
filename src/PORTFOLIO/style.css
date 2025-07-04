@@ -86,7 +86,7 @@ section {
   display: flex;
   align-items: center;
   padding: 0 9%;
-  background: url('/assets/banner.png') no-repeat;
+  background: url('https://lh3.googleusercontent.com/pw/AP1GczNnb4WrqZ532QvALXBwZZIcOD9XhSjh-bWCPIweXZjWtqX__LLW9zRI9yA3mGkLdFL2hVGziKV4AnphOBB5Ilkz3SZftgS1wtxk1MBn4tieU04FilxuammDBhOL-ITjLaWPvMc5ZlC6yymsJhSx7LH8=w1640-h923-s-no-gm') no-repeat;
   background-size: cover;
   background-position: center;
 }
