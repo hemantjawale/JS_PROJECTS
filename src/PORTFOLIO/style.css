@@ -785,6 +785,10 @@ span {
 }
 
 @media (max-width: 520px) {
+  
+  .home{
+    background: none;
+  }
   html {
     font-size: 50%;
   }
@@ -805,6 +809,9 @@ span {
 }
 
 @media (max-width: 462px) {
+  .home{
+    background: none;
+  }
   .home-content h1 {
     font-size: 5.2rem;
   }
@@ -936,3 +943,7 @@ section:nth-child(odd) .animate.scroll,
   background: var(--second-bg-color);
 }
 
+.deploy{
+  color: var(--main-color);
+  text-decoration: underline;
+}
