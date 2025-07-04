@@ -18,6 +18,7 @@ AddBtn.addEventListener("click",(e)=>{
     };
     allTasks.push(newTask);
     saveTaskLocal();
+     renderTaskLoocal(newTask); 
     taskTest="";
 })
 function saveTaskLocal(){
@@ -26,6 +27,7 @@ function saveTaskLocal(){
 function renderTaskLoocal(task){
     let li=document.createElement("li");
     li.setAttribute("data-id",task.id);
+
     li.innerHTML=`
     <span>${task.taksname}</span>
     <button id = "delete">-</button>`
