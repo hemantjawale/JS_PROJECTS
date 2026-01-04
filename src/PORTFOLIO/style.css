@@ -64,6 +64,24 @@ body {
   transition: 0.3s;
 }
 
+.cta-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  margin-left: 3.5rem;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.6rem;
+  color: var(--bg-color);
+  background: var(--main-color);
+  font-weight: 600;
+  transition: 0.3s;
+}
+.cta-btn:hover{
+  background: transparent;
+  color: var(--main-color);
+}
+
 .navbar a:hover,
 .navbar a.active {
   color: var(--main-color);
@@ -86,14 +104,27 @@ section {
   display: flex;
   align-items: center;
   padding: 0 9%;
-  background: url('./assets/hemantbanner.png') no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: none;
 }
 
 .home-content {
   max-width: 60rem;
   z-index: 99;
+}
+
+.home-visual{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-visual img{
+  height: 60rem;
+  width: auto;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 0.2rem solid var(--main-color);
 }
 
 .home-content h1 {
@@ -253,18 +284,19 @@ section {
 }
 
 .home-imgHover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 45%;
-  height: 100%;
-  background: transparent;
-  transition: 3s;
+  display: none;
 }
 
-.home-imgHover:hover {
-  background: var(--bg-color);
-  opacity: 0.8;
+@media (max-width: 462px) {
+  .home-visual{
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .home-visual img{
+    height: 40rem;
+  }
 }
 
 .about {
@@ -275,6 +307,15 @@ section {
   gap: 2rem;
   background: var(--second-bg-color);
   padding-bottom: 6rem;
+}
+
+.about-wrapper{
+  display: grid;
+  grid-template-columns: 25rem 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
 }
 
 .heading {
@@ -319,7 +360,7 @@ span {
 }
 
 .about-content {
-  text-align: center;
+  text-align: left;
 }
 
 .about-content h3 {
@@ -433,10 +474,69 @@ span {
   padding-top: 0.5rem;
 }
 
+.project-thumb{
+  display: flex;
+  gap: 0.8rem;
+  margin: 0.6rem 0 0.8rem;
+  color: var(--main-color);
+}
+.project-thumb i{
+  font-size: 2.2rem;
+  opacity: 0.8;
+}
+
 .skills {
   min-height: auto;
   padding-bottom: 7rem;
   background-color: var(--second-bg-color);
+}
+
+.skills{
+  position: relative;
+}
+
+.skills-floating{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.skills-floating i{
+  position: absolute;
+  font-size: 5.6rem;
+  opacity: 0.2;
+  animation: drift 9s ease-in-out infinite alternate;
+}
+
+.skills-floating .bxl-react{ color: #61dafb; }
+.skills-floating .bxl-redux{ color: #764abc; }
+.skills-floating .bxl-nodejs{ color: #68a063; }
+.skills-floating .bxl-mongodb{ color: #4db33d; }
+.skills-floating .bxl-tailwind-css{ color: #38bdf8; }
+.skills-floating .bxl-javascript{ color: #f7df1e; }
+.skills-floating .bxl-git{ color: #f05032; }
+.skills-floating .bxl-html5{ color: #e34f26; }
+.skills-floating .bxl-css3{ color: #1572b6; }
+.skills-floating .bxs-data{ color: var(--main-color); }
+
+.float-1{ top: 8%; left: 6%; animation-duration: 10s; }
+.float-2{ top: 22%; left: 24%; animation-duration: 12s; }
+.float-3{ top: 12%; left: 42%; animation-duration: 11s; }
+.float-4{ top: 34%; left: 60%; animation-duration: 9s; }
+.float-5{ top: 4%; left: 78%; animation-duration: 13s; }
+.float-6{ top: 46%; left: 84%; animation-duration: 10s; }
+.float-7{ top: 28%; left: 12%; animation-duration: 12s; }
+.float-8{ top: 58%; left: 20%; animation-duration: 10s; }
+.float-9{ top: 55%; left: 52%; animation-duration: 11s; }
+
+.skills .skills-row{
+  position: relative;
+  z-index: 1;
 }
 
 .skills h2{
@@ -520,7 +620,7 @@ span {
 }
 
 .skills-column:nth-child(1) .skills-contnet .progress:nth-child(1) .bar span {
-  width: 90%;
+  width: 85%;
 }
 
 .skills-column:nth-child(1) .skills-contnet .progress:nth-child(2) .bar span {
@@ -528,27 +628,35 @@ span {
 }
 
 .skills-column:nth-child(1) .skills-contnet .progress:nth-child(3) .bar span {
-  width: 70%;
+  width: 90%;
 }
 
 .skills-column:nth-child(1) .skills-contnet .progress:nth-child(4) .bar span {
-  width: 60%;
-}
-
-.skills-column:nth-child(2) .skills-contnet .progress:nth-child(1) .bar span {
-  width: 65%;
-}
-
-.skills-column:nth-child(2) .skills-contnet .progress:nth-child(2) .bar span {
   width: 80%;
 }
 
+.skills-column:nth-child(1) .skills-contnet .progress:nth-child(5) .bar span {
+  width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-contnet .progress:nth-child(1) .bar span {
+  width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-contnet .progress:nth-child(2) .bar span {
+  width: 85%;
+}
+
 .skills-column:nth-child(2) .skills-contnet .progress:nth-child(3) .bar span {
-  width: 70%;
+  width: 85%;
 }
 
 .skills-column:nth-child(2) .skills-contnet .progress:nth-child(4) .bar span {
-  width: 60%;
+  width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-contnet .progress:nth-child(5) .bar span {
+  width: 85%;
 }
 
 .contact {
@@ -617,6 +725,19 @@ span {
 
 .contact form .btn-box.btns .btn {
   cursor: pointer;
+}
+
+.contact-status{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 2.4rem;
+}
+.contact-status .bx-check-circle{
+  font-size: 2.4rem;
+  color: #22c55e;
+  animation: pop 0.4s ease;
 }
 
 .contact form .focus {
@@ -783,6 +904,9 @@ span {
     background: var(--bg-color);
     opacity: 0.6;
   }
+  .contact .animate.scroll{
+    width: 0;
+  }
 }
 
 @media (max-width: 520px) {
@@ -832,6 +956,19 @@ span {
   .footer p {
     margin-top: 2rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-wrapper{
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .about-content{
+    text-align: center;
+  }
+  .skills-floating i{
+    font-size: 4rem;
   }
 }
 
@@ -889,6 +1026,18 @@ span {
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+
+@keyframes drift{
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(24px, -18px) scale(1.08); }
+  100% { transform: translate(-16px, 22px) scale(1); }
+}
+
+@keyframes pop{
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 .animate {

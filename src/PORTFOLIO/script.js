@@ -35,3 +35,37 @@ window.onscroll = () => {
   let footer=document.querySelector('footer');
   footer.classList.toggle('show-animate', (this.innerHeight + this.scrollY) >= document.scrollingElement.scrollHeight)
 };
+
+document.addEventListener("DOMContentLoaded", function(){
+  var form = document.getElementById("contact-form");
+  var status = document.getElementById("contact-status");
+  if (form) {
+    if (window.emailjs) {
+      emailjs.init("8-nvwbg8Te_Gn8A6l");
+    }
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var data = new FormData(form);
+      var payload = {
+        fullName: data.get("fullName"),
+        email: data.get("email"),
+        phone: data.get("phone"),
+        subject: data.get("subject"),
+        message: data.get("message")
+      };
+      if (window.emailjs) {
+        status.textContent = "Sending...";
+        emailjs.send("service_ok6owbq", "template_aki8x8v", payload)
+          .then(function(){
+            status.innerHTML = '<i class="bx bx-check-circle"></i> Message sent successfully.';
+            form.reset();
+          })
+          .catch(function(){
+            status.textContent = "Failed to send. Try again.";
+          });
+      } else {
+        status.textContent = "Service unavailable.";
+      }
+    });
+  }
+});
